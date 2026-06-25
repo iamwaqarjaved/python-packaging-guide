@@ -137,13 +137,12 @@ These rules are enforced in code review. Violations are instant rejection:
 
 ## 🗂️ Example Project
 
-The [`examples/my_project/`](examples/my_project/) directory is a complete, runnable Python project that demonstrates every standard in this guide. It includes:
+This repo **is** the working example. The `src/`, `tests/`, and `pyproject.toml` at the root demonstrate every standard in this guide:
 
-- Full `src/` layout with three submodules
-- Complete `pyproject.toml` and requirements files
-- A working test suite with `conftest.py` and integration tests
-- Correctly structured `__init__.py` with public API design
-- NumPy-style docstrings throughout
+- [`src/my_package/core.py`](src/my_package/core.py) — `clean_email`, `clean_phone`, `clean_numeric`, `clean_csv`
+- [`tests/test_core.py`](tests/test_core.py) — 24 tests across 4 test classes
+- [`tests/conftest.py`](tests/conftest.py) — shared `sample_csv` fixture
+- [`pyproject.toml`](pyproject.toml) — complete build config and tool settings
 
 ---
 
