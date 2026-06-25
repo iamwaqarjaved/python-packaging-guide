@@ -1,0 +1,115 @@
+# GitHub Repo Setup — python-packaging-guide
+
+## Repo Details
+
+Name:         python-packaging-guide
+Description:  The complete guide to structuring, packaging, and shipping professional Python projects — src/ layout, pyproject.toml, dependency management, import standards, and code review checklist.
+
+Topics/Tags (add under the About ⚙️ gear):
+  python
+  python-packaging
+  pyproject-toml
+  src-layout
+  best-practices
+  tutorial
+  engineering-handbook
+  packaging
+  virtual-environments
+  dependency-management
+  code-review
+  beginner-friendly
+
+Website: (leave blank or link to GitHub Pages if you publish docs)
+
+
+## Push Commands
+
+cd python-packaging-guide/
+
+git init
+cat > .gitignore << 'EOF'
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+EOF
+
+git add .
+git commit -m "feat: initial python packaging guide with 8 docs and working example project
+
+- README.md: landing page with 60-second summary and full table of contents
+- docs/01: project structure, src/ layout, pyproject.toml template
+- docs/02: virtual environment policy, pyenv, .gitignore
+- docs/03: dependency management, two-file system, security
+- docs/04: standard library guide — 10 must-know modules with examples
+- docs/05: import standards — order, absolute vs relative, wildcard ban
+- docs/06: third-party package policy — 5-question review, approval workflow
+- docs/07: 10-question code review checklist with instant-rejection conditions
+- docs/08: quick reference card
+- examples/my_project: complete runnable example with tests"
+
+git remote add origin https://github.com/iamwaqarjaved/python-packaging-guide.git
+git branch -M main
+git push -u origin main
+
+
+## After Creating the Repo on GitHub
+
+1. Add description and topics under the About ⚙️ gear icon
+2. Pin to your GitHub profile (Profile → Customize pins)
+3. Star it (shows activity)
+4. Add to your LinkedIn under Projects or Featured
+
+
+## GitHub Pages (Optional — Publish the Docs)
+
+If you want the guide to have a live website:
+
+1. Install MkDocs:
+   pip install mkdocs mkdocs-material
+
+2. Create mkdocs.yml at the repo root:
+
+cat > mkdocs.yml << 'EOF'
+site_name: Python Packaging Guide
+site_description: The complete guide to structuring and packaging Python projects
+site_author: Waqar Javed
+repo_url: https://github.com/iamwaqarjaved/python-packaging-guide
+repo_name: iamwaqarjaved/python-packaging-guide
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: blue
+  features:
+    - navigation.tabs
+    - navigation.top
+    - content.code.copy
+
+nav:
+  - Home: README.md
+  - Guide:
+    - 01 Project Structure: docs/01-project-structure.md
+    - 02 Virtual Environments: docs/02-virtual-environments.md
+    - 03 Dependency Management: docs/03-dependency-management.md
+    - 04 Standard Library: docs/04-standard-library.md
+    - 05 Import Standards: docs/05-import-standards.md
+    - 06 Third-Party Packages: docs/06-third-party-packages.md
+    - 07 Code Review Checklist: docs/07-code-review-checklist.md
+    - 08 Quick Reference: docs/08-quick-reference.md
+EOF
+
+3. Build and deploy to GitHub Pages:
+   mkdocs gh-deploy
+
+4. Go to: Settings → Pages → Source: gh-pages branch
+   Your site will be live at: https://iamwaqarjaved.github.io/python-packaging-guide/
