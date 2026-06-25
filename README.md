@@ -102,13 +102,22 @@ A working example of this layout lives in [`examples/my_project/`](examples/my_p
 git clone https://github.com/iamwaqarjaved/python-packaging-guide.git
 cd python-packaging-guide
 
-# Set up the example project
-cd examples/my_project
+# Create virtual environment and install
 python -m venv .venv
 source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
+
+# Run the test suite
 pytest -v
 ```
+
+---
+
+## ✅ Test Results — 24 Passed
+
+All 24 tests pass on Python 3.9+ with full coverage across `clean_email`, `clean_phone`, `clean_numeric`, and the `clean_csv` pipeline:
+
+![pytest 24 passed](assets/pytest_24_passed.png)
 
 ---
 
@@ -144,5 +153,5 @@ The [`examples/my_project/`](examples/my_project/) directory is a complete, runn
 
 ---
 
-*Author: [Waqar Javed](https://github.com/iamwaqarjaved) | CIT 411 — Atlantis University*
+*Author: [Waqar Javed](https://waqarjaved.com)*
 *This guide is open-source. PRs welcome.*
